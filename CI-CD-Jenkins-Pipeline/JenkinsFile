@@ -89,7 +89,23 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'GITHUB-CRED', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                    ls -a
+                      echo "Current directory:"
+                       pwd
+                       echo "Listing files (including hidden):"
+                        ls -la
+                   if [ -d .git ]; then
+                       echo ".git is a directory. Listing .git:"
+                   ls -la .git
+                  else
+                    echo ".git is a file with contents:"
+                 cat .git
+             fi
+
+        # Try git status to check repo health
+        echo "Checking git status:"
+        git status || echo "git status failed"
+
+        set -e
                     git config user.email "kenzmazin67@gmail.com"
                     git config user.name "kenzld"
                     BUILD_NUMBER=${BUILD_NUMBER}
