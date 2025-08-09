@@ -81,7 +81,7 @@ pipeline {
 
 
 
-    stage('Update Deployment File') {
+    stage('Update Backend Deployment File') {
         environment {
             GIT_REPO_NAME = "CI-CD-projects"
             GIT_USER_NAME = "Projects-kenz"
@@ -92,7 +92,7 @@ pipeline {
                     git config user.email "kenzmazin67@gmail.com"
                     git config user.name "kenzld"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s|image:.*|image: kenzieeiy/MERN-cicd-backend:${BUILD_NUMBER}|" CI-CD-Jenkins-Pipeline/k8s/backend-deployment.yaml
+                    sed -i "s|image:.*|image: kenzieeiy/mern-cicd-backend:${BUILD_NUMBER}|" CI-CD-Jenkins-Pipeline/k8s/backend-deployment.yaml
                     git add CI-CD-Jenkins-Pipeline/k8s/backend-deployment.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
@@ -100,7 +100,7 @@ pipeline {
             }
         }
     }
-    stage('Update Deployment File') {
+    stage('Update Frontend Deployment File') {
         environment {
             GIT_REPO_NAME = "CI-CD-projects"
             GIT_USER_NAME = "Projects-kenz"
@@ -111,7 +111,7 @@ pipeline {
                     git config user.email "kenzmazin67@gmail.com"
                     git config user.name "kenzld"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s|image:.*|image: kenzieeiy/MERN-cicd-backend:${BUILD_NUMBER}|" CI-CD-Jenkins-Pipeline/k8s/frontend-deployment.yaml
+                    sed -i "s|image:.*|image: kenzieeiy/mern-cicd-backend:${BUILD_NUMBER}|" CI-CD-Jenkins-Pipeline/k8s/frontend-deployment.yaml
                     git add CI-CD-Jenkins-Pipeline/k8s/frontend-deployment.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
