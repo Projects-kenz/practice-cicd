@@ -1,0 +1,4 @@
+reset-admin.groovy
+jenkins-token.txt            
+init.groovy.d/
+jenkins-kubeconfig-fix.yaml
