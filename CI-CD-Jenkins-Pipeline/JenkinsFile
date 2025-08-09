@@ -49,7 +49,7 @@ pipeline {
 
     stage('Build and Push Backend Image') {
       environment {
-        DOCKER_IMAGE_BACKEND = "kenzieeiy/MERN-cicd-backend:${BUILD_NUMBER}"
+        DOCKER_IMAGE_BACKEND = "kenzieeiy/mern-cicd-backend:${BUILD_NUMBER}"
         
       }
       steps {
@@ -65,7 +65,7 @@ pipeline {
 
   stage('Build and Push Frontend Image') {
       environment {
-        DOCKER_IMAGE_FRONTEND = "kenzieeiy/MERN-cicd-frontend:${BUILD_NUMBER}"
+        DOCKER_IMAGE_FRONTEND = "kenzieeiy/mern-cicd-frontend:${BUILD_NUMBER}"
         
       }
       steps {
