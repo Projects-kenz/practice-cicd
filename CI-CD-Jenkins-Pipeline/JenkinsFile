@@ -83,7 +83,7 @@ pipeline {
 
     stage('Update Backend Deployment File') {
         environment {
-            GIT_REPO_NAME = "CI-CD-projects"
+            GIT_REPO_NAME = "practice-cicd"
             GIT_USER_NAME = "Projects-kenz"
         }
         steps {
