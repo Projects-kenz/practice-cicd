@@ -11,6 +11,7 @@ metadata:
     # For local development or testing, "*" is fine.
     nginx.ingress.kubernetes.io/cors-allow-origin: "*"
 spec:
+  ingressClassName: nginx
   rules:
   # The 'host' would be your actual domain in production (e.g., your-app.com).
   - host: mern-app.com
