@@ -112,6 +112,7 @@ stage('Check Java Version') {
         git status || echo "git status failed"
 
         set -e
+                    git config --global --add safe.directory $WORKSPACE
                     git config user.email "kenzmazin67@gmail.com"
                     git config user.name "kenzld"
                     BUILD_NUMBER=${BUILD_NUMBER}
