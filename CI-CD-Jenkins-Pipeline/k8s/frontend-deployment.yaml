@@ -20,7 +20,7 @@ spec:
         - containerPort: 3000           # ✅ serve listens on 3000
         env:
         - name: VITE_API_URL
-          value: ""https://api.company.com""
+          value: "https://api.company.com"
         readinessProbe:
           httpGet:
             path: /
