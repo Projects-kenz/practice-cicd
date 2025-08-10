@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: kenzieeiy/mern-cicd-backend:8
+        image: kenzieeiy/mern-cicd-backend:13
         ports:
         - containerPort: 5000
         env:
