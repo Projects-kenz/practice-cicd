@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: kenzieeiy/mern-cicd-frontend:6
+        image: kenzieeiy/mern-cicd-frontend:8
         ports:
         - containerPort: 3000           # ✅ serve listens on 3000
         env:
