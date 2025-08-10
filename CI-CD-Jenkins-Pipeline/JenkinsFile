@@ -37,7 +37,7 @@ stage('Check Java Version') {
 
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "https://made-fascinating-advocate-metallic.trycloudflare.com"
+        SONAR_URL = "https://opponent-namely-sink-dresses.trycloudflare.com"
       }
       steps {
         withCredentials([string(credentialsId: 'SONARQUBE-CRED', variable: 'SONAR_AUTH_TOKEN')]) {
